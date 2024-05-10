@@ -11,22 +11,19 @@ import {
 
 import useStyles from './styles'
 
-const NewsCard = ({
-  article: { description, publishedAt, source, title, url, urltoImage },
-  i,
-}) => {
+const NewsCard = ({article: { description, publishedAt, source, title, url, urlToImage },i,}) => {
   const classes = useStyles();
   return (
-    <Card>
-      <CardActionArea>
+    <Card className={classes.card}>
+      <CardActionArea href={url} target="_blank">
         <CardMedia
           className={classes.media}
           image={
-            urltoImage ||
-            "https://img.freepik.com/free-vector/gradient-breaking-news-logo-design_23-2151180702.jpg?size=626&ext=jpg&ga=GA1.1.1490310224.1714478750&semt=ais"
+            urlToImage ||
+            "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRcnMxquPzKRZg0r2ttrw4kymeVHcdXvEWKxg&s"
           }
         />
-        <div>
+        <div className={classes.details}>
           <Typography variant="body2" color="textSecondary" component="h2">
             {new Date(publishedAt).toDateString()}
           </Typography>
@@ -34,7 +31,7 @@ const NewsCard = ({
             {source.name}
           </Typography>
         </div>
-        <Typography gutterBottom variant="h5">
+        <Typography className={classes.title} gutterBottom variant="h5">
           {title}
         </Typography>
         <CardContent>
@@ -43,7 +40,7 @@ const NewsCard = ({
           </Typography>
         </CardContent>
       </CardActionArea>
-      <CardActions>
+      <CardActions className={classes.cardActions}>
         <Button size="small" color="primary">
           Learn More
         </Button>
