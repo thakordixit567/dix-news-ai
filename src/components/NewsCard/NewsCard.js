@@ -9,22 +9,46 @@ import {
   Typography,
 } from "@mui/material";
 
-const NewsCard = () => {
-  return <Card>
-         <CardActionArea>
-            <CardMedia/>
-            <div>
-            <Typography variant="body2" color="textSecondary" component="h2"></Typography>
-            <Typography variant="body2" color="textSecondary" component="h2"></Typography>
-            </div>
-            <Typography gutterBottom variant="h5"></Typography>
-            <CardContent>
-              <Typography>
-               
-              </Typography>
-            </CardContent>
-         </CardActionArea>
-        </Card>;
+const NewsCard = ({
+  article: { description, publishedAt, source, title, url, urltoImage },
+  i,
+}) => {
+  return (
+    <Card>
+      <CardActionArea>
+        <CardMedia
+          image={
+            urltoImage ||
+            "https://img.freepik.com/free-vector/gradient-breaking-news-logo-design_23-2151180702.jpg?size=626&ext=jpg&ga=GA1.1.1490310224.1714478750&semt=ais"
+          }
+        />
+        <div>
+          <Typography variant="body2" color="textSecondary" component="h2">
+            {new Date(publishedAt).toDateString()}
+          </Typography>
+          <Typography variant="body2" color="textSecondary" component="h2">
+            {source.name}
+          </Typography>
+        </div>
+        <Typography gutterBottom variant="h5">
+          {title}
+        </Typography>
+        <CardContent>
+          <Typography variant="body2" color="textSecondary" component="p">
+            {description}
+          </Typography>
+        </CardContent>
+      </CardActionArea>
+      <CardActions>
+        <Button size="small" color="primary">
+          Learn More
+        </Button>
+        <Typography variant="h5" color="textSecondary">
+          {i + 1}
+        </Typography>
+      </CardActions>
+    </Card>
+  );
 };
 
 export default NewsCard;
