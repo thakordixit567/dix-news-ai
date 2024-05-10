@@ -9,14 +9,18 @@ import {
   Typography,
 } from "@mui/material";
 
+import useStyles from './styles'
+
 const NewsCard = ({
   article: { description, publishedAt, source, title, url, urltoImage },
   i,
 }) => {
+  const classes = useStyles();
   return (
     <Card>
       <CardActionArea>
         <CardMedia
+          className={classes.media}
           image={
             urltoImage ||
             "https://img.freepik.com/free-vector/gradient-breaking-news-logo-design_23-2151180702.jpg?size=626&ext=jpg&ga=GA1.1.1490310224.1714478750&semt=ais"
