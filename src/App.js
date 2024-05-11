@@ -1,6 +1,7 @@
 import React, { useState ,useEffect } from "react";
 import alanBtn from "@alan-ai/alan-sdk-web";
 import NewsCards from "./components/NewsCart/NewsCards";
+import './index.css';
 
 const alanKey =
   "7e3af44a1f16872bf0496f9885d5847a2e956eca572e1d8b807a3e2338fdd0dc/stage";
