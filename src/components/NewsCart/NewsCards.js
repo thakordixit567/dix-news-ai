@@ -4,28 +4,27 @@ import { Typography, Grid, Grow } from "@mui/material";
 import useStyles from "./styles";
 
 const infoCards = [
-  { color: "#00838f", title: "Latest News", text: "Give me the latest news" },
   {
     color: "#1565c0",
     title: "News by Categories",
     info: "Business, Entertainment, General, Health, Science, Sports, Technology",
-    text: "Give me the latest Technology news",
+    text: "Give me the latest Sports news",
   },
   {
     color: "#4527a0",
     title: "News by Terms",
-    info: "Bitcoin, PlayStation 5, Smartphones, Donald Trump...",
-    text: "What's up with PlayStation 5",
+    info: "Bitcoin, Cricket, Smartphones, Narendra Modi...",
+    text: "Give me the information about Smartphones",
   },
   {
     color: "#283593",
     title: "News by Sources",
-    info: "CNN, Wired, BBC News, Time, IGN, Buzzfeed, ABC News,NDTV News...",
-    text: "Give me the news from CNN",
+    info: "CNN, The Times Of India, BBC News, Hindustan Times, News 18, India Today, ABC News,...",
+    text: "Give me the news from The Times Of India",
   },
 ];
 
-const NewsCards = ({ articles }) => {
+const NewsCards = ({ articles, activeArticle }) => {
   const classes = useStyles();
 
   if (!articles.length) {
@@ -34,8 +33,10 @@ const NewsCards = ({ articles }) => {
         <Grid
           className={classes.container}
           container
-          alignItems="stretch"
           spacing={3}
+         justifyContent="center"
+         alignItems="center"
+          display="flex"
         >
           {infoCards.map((infoCard) => (
             <Grid
@@ -79,7 +80,7 @@ const NewsCards = ({ articles }) => {
       >
         {articles.map((article, i) => (
           <Grid item xs={12} sm={6} mb={4} lg={3} style={{ displap: "flex" }}>
-            <NewsCard article={article} i={i} />
+            <NewsCard article={article} activeArticle={activeArticle} i={i} />
           </Grid>
         ))}
       </Grid>
