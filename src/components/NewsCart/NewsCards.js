@@ -20,7 +20,7 @@ const infoCards = [
   {
     color: "#283593",
     title: "News by Sources",
-    info: "CNN, Wired, BBC News, Time, IGN, Buzzfeed, ABC News...",
+    info: "CNN, Wired, BBC News, Time, IGN, Buzzfeed, ABC News,NDTV News...",
     text: "Give me the news from CNN",
   },
 ];
@@ -52,8 +52,15 @@ const NewsCards = ({ articles }) => {
               >
                 <Typography variant="h5">{infoCard.title}</Typography>
                 {infoCard.info ? (
-                  <Typography variant="h6"> <strong>{infoCard.title.split(" ")[2]}:</strong> <br />  {infoCard.info}</Typography>) : null}
-                  <Typography variant="h6">Try saying: <br /> <i>{infoCard.text}</i></Typography>
+                  <Typography variant="h6">
+                    {" "}
+                    <strong>{infoCard.title.split(" ")[2]}:</strong> <br />{" "}
+                    {infoCard.info}
+                  </Typography>
+                ) : null}
+                <Typography variant="h6">
+                  Try saying: <br /> <i>{infoCard.text}</i>
+                </Typography>
               </div>
             </Grid>
           ))}
