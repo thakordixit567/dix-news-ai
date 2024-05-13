@@ -3,6 +3,7 @@ import alanBtn from "@alan-ai/alan-sdk-web";
 import NewsCards from "./components/NewsCart/NewsCards";
 import "./index.css";
 import { convertWordToNumber } from "word-to-number";
+import Logo from './logo/logo-main.png';
 
 const alanKey =
   "dc151d90327cd912a51c712f405db05b2e956eca572e1d8b807a3e2338fdd0dc/stage";
@@ -44,6 +45,7 @@ const App = () => {
   return (
     <div>
       <h1>Alan AI News Application</h1>
+      <img src={Logo} alt=""  />
       <NewsCards articles={newsArticles} activeArticle={activeArticle} />
     </div>
   );

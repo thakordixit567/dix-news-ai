@@ -1,5 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Jaro:opsz@6..72&family=Jersey+10+Charted&family=Jersey+25&family=Merienda:wght@300..900&family=Orbitron:wght@400..900&family=Outfit:wght@100..900&family=Permanent+Marker&family=Poetsen+One&family=Rubik+Scribble&display=swap');
-
+@import url('https://fonts.googleapis.com/css2?family=Jaro:opsz@6..72&family=Jersey+10+Charted&family=Jersey+25&family=Merienda:wght@300..900&family=Orbitron:wght@400..900&family=Outfit:wght@100..900&family=Permanent+Marker&family=Poetsen+One&family=Rubik+Scribble&display=swap');
 
 #root, html, body {
     height: 100vh;
@@ -7,7 +7,7 @@
 
 body {
     margin: 0;
-    background-color: whitesmoke;
+    background-image: linear-gradient(to right, #c6ffdd, #fbd786, #f7797d);
 }
 
 * {
@@ -19,11 +19,21 @@ html {
 }
 
 h1 {
-    font-family: 'Jaro', sans-serif;
+    font-family: 'Permanent Marker', sans-serif;
     text-align: center;
-    font-size: 60px;
-    color: rgb(212, 163, 39);
+    font-size: 50px;
+   
     letter-spacing: 10px;
-    text-decoration: underline;
+  
 
+}
+
+img {
+    display: block;
+  margin-left: auto;
+  margin-right: auto;
+  padding-bottom: -10px;
+  padding-top: -20px;
+  width: 350px;
+  
 }
